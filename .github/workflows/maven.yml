@@ -28,7 +28,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with 
-      run: mvn -B package
+      run: mvn -B package --file ../Movie-service/pom.xml
     - name: Build & Push docker image
       env:
         DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USER }}
