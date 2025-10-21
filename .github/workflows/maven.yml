@@ -28,7 +28,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with 
-      run: mvn -B package --file pom.xml
+      run: mvn -B package
     - name: Build & Push docker image
       env:
         DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USER }}
