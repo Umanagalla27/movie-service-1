@@ -29,12 +29,12 @@ jobs:
         cache: maven
     - name: Build with 
       run:
-        pwd && ls && cd /Movie-service && mvn clean install
+        pwd && ls && cd /home/runner/work/movie-service-1/movie-service-1/Movie-service && mvn clean install
     - name: Build & Push docker image
       env:
         DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USER }}
         DOCKERHUB_PWD: ${{ secrets.DOCKERHUB_PWD }}
       run:
-        cd /Movie-service && mvn -B spring-boot:build-image -DskipTests
+        cd /home/runner/work/movie-service-1/movie-service-1/Movie-service && mvn -B spring-boot:build-image -DskipTests
 
    
